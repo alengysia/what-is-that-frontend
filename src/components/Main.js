@@ -1,6 +1,10 @@
 import { Link } from "react-router-dom";
 
-function Header(props) {
+function Main(props) {
+
+
+
+
   return (
     <nav className="nav">
       <Link to="/">
@@ -10,4 +14,4 @@ function Header(props) {
   );
 }
 
-export default Header;
+export default Main;
