@@ -23,7 +23,7 @@ function Main(props) {
 
 
 
-
+console.log("3",instrument)
   return (
     <main>
         <Switch>
