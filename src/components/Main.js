@@ -1,16 +1,46 @@
-import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { Route, Switch } from "react-router-dom";
+import Home from "../pages/Home";
+import Show from "../pages/Show";
+
 
 function Main(props) {
+  const [instrument, setInstrument] = useState([]);
+
+  const URL = "https://what-is-that-sound.herokuapp.com/instrument/";
+
+  const getInstrument = async () => {
+    const response = await fetch(URL);
+    const data = await response.json();
+    setInstrument(data)
+    console.log(data)
+ };
+
+
+  useEffect(() => {
+    getInstrument();
+  }, []);
 
 
 
 
   return (
-    <nav className="nav">
-      <Link to="/">
-        <div>This is the Main component</div>
-      </Link>
-    </nav>
+    <main>
+        <Switch>
+            <Route exact path="/">
+                <Home instrument={instrument} />
+            </Route>
+            <Route 
+              path="/instruments/:id"
+              render={(rp) => (
+                <Show
+                  instrument={instrument}
+                  {...rp}
+              />
+            )}
+          />
+        </Switch>
+    </main>
   );
 }
 
