@@ -1,10 +1,12 @@
 import { useState } from "react";
 import {Link} from "react-router-dom"
+import { signIn } from '../services/firebase'
 
 function Login(props) {
     return (
         <div>
-            <h1>This is the Login page</h1>
+            <h1>Login</h1>
+            <button onClick={signIn}>Login with Google</button>
         </div>
     );
 }
