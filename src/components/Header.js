@@ -11,7 +11,7 @@ function Header(props) {
           </Link>
         </li>
         <li>
-          <Link>Login</Link>
+          <Link to="/login">Login</Link>
         </li>
         <li onClick={logOut}>Logout</li>
       </ul>
