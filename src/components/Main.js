@@ -5,13 +5,26 @@ import Show from "../pages/Show";
 import Login from "../pages/Login";
 import Landing from "../pages/Landing";
 import Create from "../pages/Create";
+import Header from "../components/Header"
 import { auth } from "../services/firebase"
 
 
 function Main(props) {
   const [instrument, setInstrument] = useState([]);
 
-  const URL = "https://what-is-that-sound.herokuapp.com/instrument/";
+  const [user, setUser] = useState(null);
+
+
+
+  useEffect(() => {
+   const bounty = auth.onAuthStateChanged(user => setUser(user));
+    return () => bounty(); //the quicker thicker picker upper
+  }, [])
+   console.log("This is:", user)
+
+
+
+  const URL = "https://what-is-that-sound.herokuapp.com/instruments/";
 
   const getInstrument = async () => {
     const response = await fetch(URL);
@@ -30,6 +43,7 @@ function Main(props) {
 console.log("3",instrument)
   return (
     <main>
+      <Header user={user} />
         <Switch>
             <Route exact path="/">
                 <Home instrument={instrument} />

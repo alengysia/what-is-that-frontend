@@ -10,10 +10,13 @@ function Header(props) {
             <div>What IS that sound?</div>
           </Link>
         </li>
-        <li>
-          <Link to="/login">Login</Link>
-        </li>
-        <li onClick={logOut}>Logout</li>
+            {
+              props.user ?
+                <li onClick={logOut}>Logout</li>
+              :<li>
+                <Link to="/login">Login</Link>
+              </li>
+            }
       </ul>
     </nav>
   );
