@@ -12,7 +12,16 @@ function Header(props) {
         </li>
             {
               props.user ?
+              <>
+                <li>Stay awhile and listen, {props.user.displayName}</li>
+                <li>
+                  <img 
+                    src={props.user.photoURL} 
+                    alt={props.user.displayName} 
+                    />
+                </li>
                 <li onClick={logOut}>Logout</li>
+              </>
               :<li>
                 <Link to="/login">Login</Link>
               </li>
