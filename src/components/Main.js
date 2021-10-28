@@ -34,7 +34,7 @@ console.log("3",instrument)
               path="/instruments/:id"
               render={(rp) => (
                 <Show
-                  instrument={instrument}
+                  instruments={instrument}
                   {...rp}
               />
             )}
