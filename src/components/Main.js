@@ -2,11 +2,20 @@ import { useEffect, useState } from "react";
 import { Route, Switch, Redirect } from "react-router-dom";
 import Home from "../pages/Home";
 import Show from "../pages/Show";
-import Login from "../pages/Login";
+
 import Landing from "../pages/Landing";
 import Create from "../pages/Create";
 import Header from "../components/Header"
 import { auth } from "../services/firebase"
+
+const ProtectedRoute = (props) => {
+  if(props.user){
+    return props.page;
+  } else {
+    return <Redirect to="/" />
+  }
+}
+
 
 
 function Main(props) {
@@ -57,9 +66,6 @@ console.log("3",instrument)
               />
             )}
           />
-          <Route path="/login">
-            <Login />
-          </Route>
           <Route path="/landing">
             <Landing />
           </Route>

@@ -4,6 +4,7 @@ import { Link } from "react-router-dom"
 
 
 
+
 function Home(props) {
 
 
@@ -29,6 +30,7 @@ function Home(props) {
 
     return (
         <section>
+            
             {props.instrument ? loaded() : loading()}
         </section>
     );
