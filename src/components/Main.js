@@ -8,14 +8,6 @@ import Create from "../pages/Create";
 import Header from "../components/Header"
 import { auth } from "../services/firebase"
 
-const ProtectedRoute = (props) => {
-  if(props.user){
-    return props.page;
-  } else {
-    return <Redirect to="/" />
-  }
-}
-
 
 
 function Main(props) {
@@ -43,6 +35,29 @@ function Main(props) {
  };
 
 
+ const createInstrument = async (inst) => {
+   await fetch(URL, {
+     method: "POST",
+     headers: {
+       "Content-Type" : "Application/json",
+     },
+     body: JSON.stringify(inst),
+   });
+   getInstrument();
+ };
+
+ const updateInstrument = async (inst, id) => {
+   await fetch(URL + id, {
+     method: "PUT",
+     headers: {
+       "Content-Type" : "Application/json",
+     },
+     body: JSON.stringify(inst)
+   });
+   getInstrument();
+ };
+
+
   useEffect(() => {
     getInstrument();
   }, []);
@@ -66,11 +81,11 @@ console.log("3",instrument)
               />
             )}
           />
-          <Route path="/landing">
-            <Landing />
-          </Route>
+          <Route path="/landing" render={() => (
+            user ? <Landing /> : <Redirect to="/" />
+          )} />
           <Route path="/create">
-            <Create />
+            <Create instrument={instrument} createInstrument={createInstrument} />
           </Route>
         </Switch>
     </main>
