@@ -49,7 +49,7 @@ function Create(props) {
                     onChange={instChange} 
                     />
                 <label htmlFor="instType">Type of Instrument</label>
-                <select name="instType" onChange={instChange}>
+                <select name="instType" value={newForm.instType} onChange={instChange}>
                     <option value="String">String</option>
                     <option value="Woodwind">Woodwind</option>
                     <option value="Brass">Brass</option>
@@ -66,13 +66,22 @@ function Create(props) {
                     placeholder="Instrument image URL"
                     onChange={instChange} 
                     />
+                <label htmlFor="instOrigin">Area of Origin</label> 
+                <select name="instOrigin" value={newForm.instOrigin} onChange={instChange}>
+                    <option value="northAmerica">North America</option>
+                    <option value="southAmerica">South America</option>
+                    <option value="europe">Europe</option>
+                    <option value="asia">Asia</option>
+                    <option value="australia">Australia</option>
+                    <option value="africa">Africa</option>
+                    <option value="homemade">Other</option>
+                </select>  
                 <label htmlFor="instTradition">Check the box if the instrument is traditional. Leave blank if not.  </label>    
-                <input 
-                    type="checkbox"
-                    value={newForm.instTradition}
-                    name="instTradition"
-                    onChange={instChange}
-                    />
+                <label htmlFor="instTradition">Is this a traditional instrument?</label>
+                <select name="instTradition" value={newForm.instTradiation} onChange={instChange}>
+                    <option value="true">Yes</option>
+                    <option value="false">No</option>
+                </select>
                 <textarea 
                     value={newForm.instAbout}
                     name="instAbout" 
@@ -87,8 +96,8 @@ function Create(props) {
                     name="instVid"
                     placeholder="Video link URL"
                     onChange={instChange} 
-                    />
-                       
+                />
+                 <input type="submit" value="Add Instrument" />      
             </form>
         </section> 
     );

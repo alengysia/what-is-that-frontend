@@ -85,7 +85,10 @@ console.log("3",instrument)
             user ? <Landing /> : <Redirect to="/" />
           )} />
           <Route path="/create">
-            <Create instrument={instrument} createInstrument={createInstrument} />
+            <Create 
+              instrument={instrument} 
+              createInstrument={createInstrument} 
+              updateInstrument={updateInstrument} />
           </Route>
         </Switch>
     </main>

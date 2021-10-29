@@ -5,6 +5,7 @@ function Landing(props) {
     return (
         <div>
             <h1>This is the Landing page</h1>
+            <Link to='/create'>Add a new instrument here</Link>
         </div>
     );
 }
