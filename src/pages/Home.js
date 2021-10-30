@@ -1,24 +1,28 @@
 // import { useState } from "react";
 import { Link } from "react-router-dom"
-
+import styled from 'styled-components';
 
 
 
 
 function Home(props) {
 
-
+    
 
 
 
     console.log("this is instruments",  props.instrument)
     const loaded = () => {
         return props.instrument.map((inst) =>(
-            <div key={inst._id} className="instrument">
-                <Link to={`/instruments/${inst._id}`}>
-              <img src={inst.instImage} alt={inst.instName} />
-              </Link>
-            </div>
+            <StyledHeader>
+                <div key={inst._id} className="instrument">
+                    <div className="inst-card">
+                        <Link to={`/instruments/${inst._id}`}>
+                        <img src={inst.instImage} alt={inst.instName} />
+                        </Link>
+                    </div>
+                </div>
+            </StyledHeader>
         ))
     };
 

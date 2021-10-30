@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Route, Switch, Redirect } from "react-router-dom";
 import Home from "../pages/Home";
 import Show from "../pages/Show";
-
+import '../App.css';
 import Landing from "../pages/Landing";
 import Create from "../pages/Create";
 import Header from "../components/Header"
