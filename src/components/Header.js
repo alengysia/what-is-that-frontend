@@ -12,6 +12,7 @@ function Header(props) {
     @import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@400;600&display=swap');
 
     font-family: 'Exo 2', sans-serif;
+    background-color: black;
     ul{
     height: 75px;
     width: 90%;
@@ -28,7 +29,7 @@ function Header(props) {
     }
     .cain{
       font-size: 22px;
-
+      color: #42f5e0
     }
     nav li{
       list-style-type: none;

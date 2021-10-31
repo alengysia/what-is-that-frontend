@@ -1,17 +1,17 @@
-.App{
+.App{ 
   width: 100%;
-  height: 100vh;
-  
+  height: 120vh;
+
 }
 
 .home{
-  background-color: black;
-  height: 100vh;
+  height: 100%;
   width: 90%;
   margin-left: 5%;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr;
+  border-radius: 15px;
 }
 
 .home-container{
@@ -23,7 +23,7 @@
  width: 180px;
  height: 190px;
  border-radius: 15px;
- background-color: blanchedalmond;
+ background-color: #D9DBE2;
  display: flex;
  align-items: center;
  justify-content: center;
@@ -41,4 +41,44 @@
   width: 150px;
   height: 150px;
   border-radius: 15px;
+  box-shadow: 4px 4px 6px #a1a3a5;
+}
+.show-title{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction:column
+}
+
+.show h1,
+.inst-type{
+  text-align: center;
+  background-color: #D9DBE2;
+  width: 200px;
+  border-radius: 15px;
+}
+
+.inst-type {
+  margin-top: 0;
+  width: 300px;
+}
+
+.show-mid{
+  width: 90%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.show-about{
+  background-color: #D9DBE2;
+  width: 700px;
+  height: 400px;
+  text-align: center;
+  border-radius: 15px;
+}
+
+.show img{
+  max-width: 500px;
+  max-height: 600px;
 }
