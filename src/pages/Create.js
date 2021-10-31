@@ -51,8 +51,9 @@ function Create(props) {
                     />
                 <label htmlFor="instType">Type of Instrument</label>
                 <select name="instType" value={newForm.instType} onChange={instChange}>
+                    <option value="type">Select a type</option>
                     <option value="String">String</option>
-                    <option value="Woodwind">Woodwind</option>
+                    <option value="Wind">Wind</option>
                     <option value="Brass">Brass</option>
                     <option value="Keyboards">Keyboards</option>
                     <option value="Purcussion">Purcussion</option>
@@ -69,17 +70,18 @@ function Create(props) {
                     />
                 <label htmlFor="instOrigin">Area of Origin</label> 
                 <select name="instOrigin" value={newForm.instOrigin} onChange={instChange}>
-                    <option value="northAmerica">North America</option>
-                    <option value="southAmerica">South America</option>
-                    <option value="europe">Europe</option>
-                    <option value="asia">Asia</option>
-                    <option value="australia">Australia</option>
-                    <option value="africa">Africa</option>
-                    <option value="homemade">Other</option>
-                </select>  
-                <label htmlFor="instTradition">Check the box if the instrument is traditional. Leave blank if not.  </label>    
+                    <option value="select">Select a region</option>
+                    <option value="North America">North America</option>
+                    <option value="South America">South America</option>
+                    <option value="Europe">Europe</option>
+                    <option value="Asia">Asia</option>
+                    <option value="Australia">Australia</option>
+                    <option value="Africa">Africa</option>
+                    <option value="Homemade">Other</option>
+                </select>   
                 <label htmlFor="instTradition">Is this a traditional instrument?</label>
                 <select name="instTradition" value={newForm.instTradiation} onChange={instChange}>
+                    <option value="traditional">Yes/No?</option>
                     <option value="true">Yes</option>
                     <option value="false">No</option>
                 </select>

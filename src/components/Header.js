@@ -14,7 +14,7 @@ function Header(props) {
     font-family: 'Exo 2', sans-serif;
     ul{
     height: 75px;
-    width: 100%;
+    width: 90%;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -72,7 +72,8 @@ function Header(props) {
                         <div>User Page</div>
                       </Link>
                     </li>
-                    <li onClick={logOut}>Logout</li>
+                    <a href=""><li onClick={logOut}>Logout</li></a>
+                  
                   </>
                    :<li>
                     

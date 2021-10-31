@@ -21,7 +21,7 @@ function Main(props) {
    const bounty = auth.onAuthStateChanged(user => setUser(user));
     return () => bounty(); //the quicker thicker picker upper
   }, [])
-   console.log("This is:", user)
+   
 
 
 
@@ -31,7 +31,7 @@ function Main(props) {
     const response = await fetch(URL);
     const data = await response.json();
     setInstrument(data)
-    console.log(data)
+    
  };
 
 
@@ -64,7 +64,7 @@ function Main(props) {
 
 
 
-console.log("3",instrument)
+
   return (
     <main>
       <Header user={user} />
