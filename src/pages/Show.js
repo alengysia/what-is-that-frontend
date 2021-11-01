@@ -24,10 +24,14 @@ function Show({match, instruments}) {
                     <h3>{instrument?.instAbout}</h3>
                 </div>
             </div>
-
+            <div className="react-player">
             <ReactPlayer
                  url={instrument?.instVid}
+                 controls="true"
+                 width="960px"
+                 height="540px"
             />
+            </div>
         </div>
     );
 }
