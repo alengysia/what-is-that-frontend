@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { Route, Switch, Redirect } from "react-router-dom";
 import Home from "../pages/Home";
 import Show from "../pages/Show";
@@ -15,62 +15,87 @@ function Main(props) {
 
   const [user, setUser] = useState(null);
 
+  const fetchData = useRef(null)
 
-
-  useEffect(() => {
-   const bounty = auth.onAuthStateChanged(user => setUser(user));
-    return () => bounty(); //the quicker thicker picker upper
-  }, [])
-   
-
-
-
+  
+  
+  
+  
   const URL = "https://what-is-that-sound.herokuapp.com/instruments/";
-
+  
+  
   const getInstrument = async () => {
-    const response = await fetch(URL);
+    if(!user) return;
+    const token = await user.getIdToken();
+    console.log(token)
+    const response = await fetch(URL, {
+      
+      method: 'GET',
+      headers: {
+        'Authorization': 'Bearer ' + token
+      }
+    });
+    console.log(response)
     const data = await response.json();
+    console.log("this is data", data)
     setInstrument(data)
     
- };
+  };
 
-
- const createInstrument = async (inst) => {
-   await fetch(URL, {
-     method: "POST",
-     headers: {
-       "Content-Type" : "Application/json",
-     },
-     body: JSON.stringify(inst),
-   });
-   getInstrument();
- };
-
- const updateInstrument = async (inst, id) => {
-   await fetch(URL + id, {
-     method: "PUT",
-     headers: {
-       "Content-Type" : "Application/json",
-     },
-     body: JSON.stringify(inst)
-   });
-   getInstrument();
- };
-
+  
+  
+  const createInstrument = async (inst) => {
+    if(!user) return;
+    const token = await user.getIdToken();
+    const data = {...inst, uid: user.uid}
+    await fetch(URL, {
+      method: 'POST',
+      headers: {
+        'Content-Type' : 'Application/json',
+        'Authorization' : 'Bearer ' + token
+      },
+      body: JSON.stringify(data),
+    });
+    getInstrument();
+  };
+  
+  const updateInstrument = async (inst, id) => {
+    if(!user) return;
+    const token = await user.getIdToken();
+    const data = {...inst, uid: user.uid}
+    await fetch(URL + id, {
+      method: 'PUT',
+      headers: {
+        'Content-Type' : 'Application/json',
+        'Authorization' : 'Bearer ' + token
+      },
+      body: JSON.stringify(inst)
+    });
+    getInstrument();
+  };
+  
+  
+  // useEffect(() => {
+  //   getInstrument();
+  // }, []);
+  
+  
+  // useEffect(() => fetchData.current = createIn)
 
   useEffect(() => {
-    getInstrument();
-  }, []);
-
-
-
+    const bounty = auth.onAuthStateChanged(user => setUser(user));
+     getInstrument()
+     return () => bounty(); //the quicker thicker picker upper
+   }, [user]) 
 
   return (
     <main>
       <Header user={user} />
         <Switch>
             <Route exact path="/">
-                <Home instrument={instrument} />
+                <Home 
+                user={user} 
+                instrument={instrument}/>
             </Route>
             <Route 
               path="/instruments/:id"
@@ -86,6 +111,7 @@ function Main(props) {
           )} />
           <Route path="/create">
             <Create 
+              user={user}
               instrument={instrument} 
               createInstrument={createInstrument} 
               updateInstrument={updateInstrument} />

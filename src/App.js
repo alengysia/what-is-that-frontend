@@ -17,15 +17,15 @@ function App() {
 
 
  return (
-    <div style={
-      {backgroundImage: `url(${randomPic})`,
-       backgroundSize: 'cover', 
-       backgroundRepeat: 'no-repeat',
-       }
-    } 
-     className="App">
-       <Main />
-    </div>
+      <div style={
+        {backgroundImage: `url(${randomPic})`,
+        backgroundSize: 'cover', 
+        backgroundRepeat: 'no-repeat',
+        }
+      } 
+      className="App">
+        <Main />
+      </div>
   );
 }
 

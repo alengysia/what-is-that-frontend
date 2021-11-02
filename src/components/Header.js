@@ -10,7 +10,8 @@ function Header(props) {
 
   const StyledHeader = styled.header`
     @import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@400;600&display=swap');
-
+    margin-top: 0;
+    padding: 0;
     font-family: 'Exo 2', sans-serif;
     background-color: black;
     ul{
@@ -19,6 +20,7 @@ function Header(props) {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin: 0;
     }
     a{
       text-decoration: none;
@@ -41,7 +43,12 @@ function Header(props) {
       border-radius: 40%
       
     }
-
+    .logout{
+      color: purple;
+      :hover{
+        cursor: pointer;
+      }
+    }
   `;
 
 
@@ -73,7 +80,7 @@ function Header(props) {
                         <div>User Page</div>
                       </Link>
                     </li>
-                    <a href=""><li onClick={logOut}>Logout</li></a>
+                    <li className="logout" onClick={logOut}>Logout</li>
                   
                   </>
                    :<li>

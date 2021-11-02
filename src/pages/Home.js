@@ -8,7 +8,7 @@ import "../App.css";
 function Home(props) {
 
     
-
+    
 
 
     console.log("this is instruments",  props.instrument)
