@@ -47,7 +47,7 @@ function Main(props) {
   const createInstrument = async (inst) => {
     if(!user) return;
     const token = await user.getIdToken();
-    const data = {...inst, uid: user.uid}
+    const data = {...inst, managedBy: user.uid}
     await fetch(URL, {
       method: 'POST',
       headers: {
@@ -75,9 +75,6 @@ function Main(props) {
   };
   
   
-  // useEffect(() => {
-  //   getInstrument();
-  // }, []);
   
   
   // useEffect(() => fetchData.current = createIn)
@@ -107,7 +104,7 @@ function Main(props) {
             )}
           />
           <Route path="/landing" render={() => (
-            user ? <Landing /> : <Redirect to="/" />
+            user ? <Landing user={user} instrument={instrument} /> : <Redirect to="/" />
           )} />
           <Route path="/create">
             <Create 
