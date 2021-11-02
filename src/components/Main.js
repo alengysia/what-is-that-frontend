@@ -1,12 +1,12 @@
-import { useEffect, useState, useRef } from "react";
-import { Route, Switch, Redirect } from "react-router-dom";
-import Home from "../pages/Home";
-import Show from "../pages/Show";
+import { useEffect, useState, useRef } from 'react';
+import { Route, Switch, Redirect } from 'react-router-dom';
+import Home from '../pages/Home';
+import Show from '../pages/Show';
 import '../App.css';
-import Landing from "../pages/Landing";
-import Create from "../pages/Create";
-import Header from "../components/Header"
-import { auth } from "../services/firebase"
+import Landing from '../pages/Landing';
+import Create from '../pages/Create';
+import Header from '../components/Header';
+import { auth } from '../services/firebase';
 
 
 
@@ -21,23 +21,23 @@ function Main(props) {
   
   
   
-  const URL = "https://what-is-that-sound.herokuapp.com/instruments/";
+  const URL = 'https://what-is-that-sound.herokuapp.com/instruments/';
   
   
   const getInstrument = async () => {
-    if(!user) return;
-    const token = await user.getIdToken();
-    console.log(token)
+    // if(!user) return;
+    // const token = await user.getIdToken();
+    
     const response = await fetch(URL, {
       
       method: 'GET',
-      headers: {
-        'Authorization': 'Bearer ' + token
-      }
+      // headers: {
+      //   'Authorization': 'Bearer ' + token
+      // }
     });
-    console.log(response)
+    
     const data = await response.json();
-    console.log("this is data", data)
+   
     setInstrument(data)
     
   };
@@ -89,13 +89,13 @@ function Main(props) {
     <main>
       <Header user={user} />
         <Switch>
-            <Route exact path="/">
+            <Route exact path='/'>
                 <Home 
                 user={user} 
                 instrument={instrument}/>
             </Route>
             <Route 
-              path="/instruments/:id"
+              path='/instruments/:id'
               render={(rp) => (
                 <Show
                   instruments={instrument}
@@ -103,16 +103,17 @@ function Main(props) {
               />
             )}
           />
-          <Route path="/landing" render={() => (
+          <Route path='/landing' render={() => (
             user ? <Landing user={user} instrument={instrument} /> : <Redirect to="/" />
           )} />
-          <Route path="/create">
+          <Route path='/create' render = {() => (
+            user ? 
             <Create 
               user={user}
               instrument={instrument} 
               createInstrument={createInstrument} 
-              updateInstrument={updateInstrument} />
-          </Route>
+              updateInstrument={updateInstrument} /> : <Redirect to ='/' />
+          )} />
         </Switch>
     </main>
   );

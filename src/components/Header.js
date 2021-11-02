@@ -1,6 +1,6 @@
-import { Link } from "react-router-dom";
-import { logOut } from "../services/firebase"
-import { signIn } from '../services/firebase'
+import { Link } from 'react-router-dom';
+import { logOut } from '../services/firebase';
+import { signIn } from '../services/firebase';
 import styled from 'styled-components';
 
 
@@ -57,30 +57,30 @@ function Header(props) {
 
   return (
    <StyledHeader>
-     <div className="nav-container">
-        <nav className="nav">
+     <div className='nav-container'>
+        <nav className='nav'>
           <ul>
               <li>
-                <Link to="/">
-                  <div className="home-link">What IS that sound?</div>
+                <Link to='/'>
+                  <div className='home-link'>What IS that sound?</div>
                 </Link>
               </li>
                 {
                   props.user ?
                   <>
-                    <li className="cain">Stay awhile and listen, {props.user.displayName}</li>
+                    <li className='cain'>Stay awhile and listen, {props.user.displayName}</li>
                     <li>
-                      <img className="user-img"
+                      <img className='user-img'
                         src={props.user.photoURL} 
                         alt={props.user.displayName} 
                         />
                     </li>
                     <li>
-                      <Link to="/landing">
+                      <Link to='/landing'>
                         <div>User Page</div>
                       </Link>
                     </li>
-                    <li className="logout" onClick={logOut}>Logout</li>
+                    <li className='logout' onClick={logOut}>Logout</li>
                   
                   </>
                    :<li>

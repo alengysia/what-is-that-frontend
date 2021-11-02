@@ -1,6 +1,6 @@
-import { useState } from "react";
-import {Link} from "react-router-dom"
-import { signIn } from '../services/firebase'
+import { useState } from 'react';
+import {Link} from 'react-router-dom';
+import { signIn } from '../services/firebase';
 // import { auth } from "../services/firebase"
 
 function Login(props) {

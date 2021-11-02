@@ -1,6 +1,6 @@
 // import { useState } from "react";
-import { Link } from "react-router-dom"
-import "../App.css";
+import { Link } from 'react-router-dom';
+import '../App.css';
 
 
 
@@ -11,12 +11,12 @@ function Home(props) {
     
 
 
-    console.log("this is instruments",  props.instrument)
+    
     const loaded = () => {
         return props.instrument.map((inst) =>(
-            <div key={inst._id} className="instrument">
+            <div key={inst._id} className='instrument'>
                 <Link to={`/instruments/${inst._id}`}>
-                    <img className="home-img" src={inst.instImage} alt={inst.instName} />
+                    <img className='home-img' src={inst.instImage} alt={inst.instName} />
                 </Link>
                     <h4>{inst.instName}</h4>
             </div>
@@ -30,7 +30,7 @@ function Home(props) {
 
 
     return (
-        <section className="home">
+        <section className='home'>
             
             {props.instrument ? loaded() : loading()}
         </section>

@@ -1,12 +1,12 @@
-import { useState, useEffect } from "react";
-import {Link} from "react-router-dom"
+import { useState, useEffect } from 'react';
+import {Link} from 'react-router-dom';
 import '../App.css';
 
 function Landing(props) {
 
     const [instrument, setInstrument] = useState([]);
 
-    const URL_LANDING = "https://what-is-that-sound.herokuapp.com/landing/"
+    const URL_LANDING = 'https://what-is-that-sound.herokuapp.com/landing/'
 
 
     const getInstrument2 = async () => {
@@ -22,7 +22,6 @@ function Landing(props) {
         });
         console.log(response)
         const data = await response.json();
-        console.log("this is data", data)
         setInstrument(data)
         
       };
@@ -33,9 +32,9 @@ function Landing(props) {
 
     const loaded = () => {
         return instrument.map((inst) =>(
-            <div key={inst._id} className="instrument">
+            <div key={inst._id} className='instrument'>
                 <Link to={`/instruments/${inst._id}`}>
-                    <img className="home-img" src={inst.instImage} alt={inst.instName} />
+                    <img className='home-img' src={inst.instImage} alt={inst.instName} />
                 </Link>
                     <h4>{inst.instName}</h4>
             </div>
