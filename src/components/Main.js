@@ -6,6 +6,7 @@ import '../App.css';
 import Landing from '../pages/Landing';
 import Create from '../pages/Create';
 import Header from '../components/Header';
+
 import { auth } from '../services/firebase';
 
 
@@ -98,13 +99,21 @@ function Main(props) {
               path='/instruments/:id'
               render={(rp) => (
                 <Show
+                  createInstrument={createInstrument}
+                  updateInstrument={updateInstrument}
+                  user={user}
                   instruments={instrument}
                   {...rp}
               />
             )}
           />
           <Route path='/landing' render={() => (
-            user ? <Landing user={user} instrument={instrument} /> : <Redirect to="/" />
+            user ? <Landing 
+                      createInstrument={createInstrument}
+                      updateInstrument={updateInstrument}
+                      user={user} 
+                      instrument={instrument} 
+                      /> : <Redirect to="/" />
           )} />
           <Route path='/create' render = {() => (
             user ? 
@@ -114,6 +123,7 @@ function Main(props) {
               createInstrument={createInstrument} 
               updateInstrument={updateInstrument} /> : <Redirect to ='/' />
           )} />
+          
         </Switch>
     </main>
   );

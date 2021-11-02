@@ -36,6 +36,7 @@ function Landing(props) {
                 <Link to={`/instruments/${inst._id}`}>
                     <img className='home-img' src={inst.instImage} alt={inst.instName} />
                 </Link>
+                
                     <h4>{inst.instName}</h4>
             </div>
         ))
@@ -50,6 +51,7 @@ function Landing(props) {
         <div>
             {instrument ? loaded() : loading()}
             <Link to='/create'>Add a new instrument here</Link>
+
         </div>
     );
 }
