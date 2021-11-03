@@ -16,7 +16,7 @@ function Main(props) {
 
   const [user, setUser] = useState(null);
 
-  const fetchData = useRef(null)
+  // const fetchData = useRef(null)
 
   
   
@@ -26,22 +26,12 @@ function Main(props) {
   
   
   const getInstrument = async () => {
-    // if(!user) return;
-    // const token = await user.getIdToken();
-    
     const response = await fetch(URL, {
-      
       method: 'GET',
-      // headers: {
-      //   'Authorization': 'Bearer ' + token
-      // }
     });
-    
     const data = await response.json();
-   
     setInstrument(data)
-    
-  };
+   };
 
   
   
@@ -74,8 +64,18 @@ function Main(props) {
     });
     getInstrument();
   };
+
+  const deleteInstrument = async (id) => {
+    if(!props.user) return;
+    await fetch(URL + id, {
+      method: "DELETE",
+    });
+    getInstrument();
+  };
   
   
+  
+
   
   
   // useEffect(() => fetchData.current = createIn)
@@ -107,12 +107,14 @@ function Main(props) {
               />
             )}
           />
-          <Route path='/landing' render={() => (
+          <Route path='/landing' render={(rp) => (
             user ? <Landing 
-                      createInstrument={createInstrument}
-                      updateInstrument={updateInstrument}
                       user={user} 
                       instrument={instrument} 
+                      createInstrument={createInstrument}
+                      updateInstrument={updateInstrument}
+                      deleteInstrument={deleteInstrument}
+                      {...rp}
                       /> : <Redirect to="/" />
           )} />
           <Route path='/create' render = {() => (

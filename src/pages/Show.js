@@ -1,6 +1,6 @@
-import { useEffect, useState } from "react";
+// import { useEffect, useState } from "react";
 import React from 'react';
-import {Link} from 'react-router-dom';
+// import {Link} from 'react-router-dom';
 import ReactPlayer from 'react-player';
 import '../App.css';
 
@@ -11,7 +11,7 @@ function Show({match, instruments}) {
     const instrument = instruments.find((p) => p._id === id);
 
 
-    const [editForm, setEditForm] = useState(instrument);
+    
 
     
  

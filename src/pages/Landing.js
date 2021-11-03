@@ -3,28 +3,50 @@ import {Link} from 'react-router-dom';
 import '../App.css';
 
 function Landing(props) {
-
+    // console.log('this is landing props', props)
+    // const id = props.match.params.id;
+    // const instruments = props.instruments;
+    // console.log(props.instruments)
+    // const instUse = instruments.find((p) => p._id === id);
+  
+    
     const [instrument, setInstrument] = useState([]);
-
+    
     const URL_LANDING = 'https://what-is-that-sound.herokuapp.com/landing/'
-
-
+    
+    
     const getInstrument2 = async () => {
         if(!props.user) return;
         const token = await props.user.getIdToken();
-        console.log(token)
+     
         const response = await fetch(URL_LANDING, {
-          
-          method: 'GET',
-          headers: {
-            'Authorization': 'Bearer ' + token
-          }
+            
+            method: 'GET',
+            headers: {
+                'Authorization': 'Bearer ' + token
+            }
         });
-        console.log(response)
+    
         const data = await response.json();
         setInstrument(data)
         
-      };
+    };
+
+    
+    
+    
+    
+    const removeInstrument = () => {
+    props.deleteInstrument(props._id);
+    props.history.push('/');
+  };
+      
+
+      
+
+
+      
+      
 
     useEffect(() => {
         getInstrument2()
@@ -32,6 +54,7 @@ function Landing(props) {
 
     const loaded = () => {
         return instrument.map((inst) =>(
+            <div>
             <div key={inst._id} className='instrument'>
                 <Link to={`/instruments/${inst._id}`}>
                     <img className='home-img' src={inst.instImage} alt={inst.instName} />
@@ -39,6 +62,10 @@ function Landing(props) {
                 
                     <h4>{inst.instName}</h4>
             </div>
+            <button id="delete" onClick={removeInstrument}>
+                DELETE
+            </button>
+        </div>
         ))
     };
 
@@ -48,7 +75,7 @@ function Landing(props) {
 
 
     return (
-        <div>
+        <div className='home'>
             {instrument ? loaded() : loading()}
             <Link to='/create'>Add a new instrument here</Link>
 
