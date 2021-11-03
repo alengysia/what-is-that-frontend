@@ -1,26 +1,33 @@
-// import { useState } from "react";
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import '../App.css';
+import ReactPaginate from 'react-paginate';
 
 
 
 
 function Home(props) {
 
+    const handleOrigin = () => {
+        
+    }
     
     
-
 
     
     const loaded = () => {
-        return props.instrument.map((inst) =>(
+        
+        return ( 
+            props.instrument.map((inst) =>(
             <div key={inst._id} className='instrument'>
                 <Link to={`/instruments/${inst._id}`}>
                     <img className='home-img' src={inst.instImage} alt={inst.instName} />
                 </Link>
                     <h4>{inst.instName}</h4>
             </div>
-        ))
+        )))
+    
+        
     };
 
     const loading = () =>{
@@ -28,11 +35,15 @@ function Home(props) {
     };
 
 
+    
+
+
 
     return (
         <section className='home'>
             
             {props.instrument ? loaded() : loading()}
+            
         </section>
     );
 }

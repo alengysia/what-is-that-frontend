@@ -36,9 +36,8 @@ function Landing(props) {
     
     
     
-    const removeInstrument = (e,id) => {
-        console.log(id)
-    props.deleteInstrument(id);
+    const removeInstrument = async (e,id) => {
+    await props.deleteInstrument(id);
     getInstrument2();
   };
       
@@ -56,13 +55,13 @@ function Landing(props) {
     const loaded = () => {
         return instrument.map((inst) =>(
             <div>
-            <div key={inst._id} className='instrument'>
-                <Link to={`/instruments/${inst._id}`}>
-                    <img className='home-img' src={inst.instImage} alt={inst.instName} />
-                </Link>
-                
-                    <h4>{inst.instName}</h4>
-            </div>
+                <div key={inst._id} className='instrument'>
+                    <Link to={`/instruments/${inst._id}`}>
+                        <img className='home-img' src={inst.instImage} alt={inst.instName} />
+                    </Link>
+                    
+                        <h4>{inst.instName}</h4>
+                </div>
             <button id="delete" onClick={(e) => removeInstrument(e, inst._id)}>
                 DELETE
             </button>
@@ -76,10 +75,13 @@ function Landing(props) {
 
 
     return (
-        <div className='home'>
-            {instrument ? loaded() : loading()}
-            <Link to='/create'>Add a new instrument here</Link>
-
+        <div>
+            <div className='add-btn'>
+                <Link to='/create'>Add a new instrument here</Link>
+            </div>
+            <div className='home'>
+                {instrument ? loaded() : loading()}
+            </div>
         </div>
     );
 }

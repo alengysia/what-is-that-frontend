@@ -99,7 +99,8 @@ function Main(props) {
             <Route exact path='/'>
                 <Home 
                 user={user} 
-                instrument={instrument}/>
+                instrument={instrument}
+                getInstrument={getInstrument} />
             </Route>
             <Route 
               path='/instruments/:id'

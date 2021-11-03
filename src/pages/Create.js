@@ -1,8 +1,9 @@
 import { useState } from 'react';
-// import {Link} from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import '../App.css';
 
 function Create(props) {
+    const history = useHistory();
 
     const [newForm, setNewForm] = useState({
         instName: '',
@@ -22,7 +23,7 @@ function Create(props) {
     };
 
 
-
+    
     const instSubmit =(event) => {
         event.preventDefault();
         props.createInstrument(newForm);

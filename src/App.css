@@ -149,3 +149,18 @@ textarea{
   width: 300px;
   border-radius: 15px;
 }
+
+.add-btn{
+  background-color: #D9DBE2;
+  width: 200px;
+  height: 30px;
+  margin-left: 42%;
+  margin-top: 20px;
+  text-align: center;
+  padding-top: 10px;
+  border-radius: 15px;
+}
+
+.add-btn a{
+  text-decoration: none;
+}
