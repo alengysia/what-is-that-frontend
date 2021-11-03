@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useState } from 'react';
 import { Route, Switch, Redirect } from 'react-router-dom';
 import Home from '../pages/Home';
 import Show from '../pages/Show';
@@ -53,7 +53,6 @@ function Main(props) {
   const updateInstrument = async (inst, id) => {
     if(!user) return;
     const token = await user.getIdToken();
-    const data = {...inst, uid: user.uid}
     await fetch(URL + id, {
       method: 'PUT',
       headers: {

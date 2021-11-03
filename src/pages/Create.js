@@ -1,9 +1,8 @@
 import { useState } from 'react';
-import { useHistory } from 'react-router-dom';
 import '../App.css';
 
 function Create(props) {
-    const history = useHistory();
+    
 
     const [newForm, setNewForm] = useState({
         instName: '',

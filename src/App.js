@@ -21,6 +21,7 @@ function App() {
         {backgroundImage: `url(${randomPic})`,
         backgroundSize: 'cover', 
         backgroundRepeat: 'no-repeat',
+        backgroundAttachment: 'fixed',
         }
       } 
       className="App">

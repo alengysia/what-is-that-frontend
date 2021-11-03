@@ -164,3 +164,8 @@ textarea{
 .add-btn a{
   text-decoration: none;
 }
+
+#delete{
+  margin-left: 26%;
+  border-radius: 5px;
+}

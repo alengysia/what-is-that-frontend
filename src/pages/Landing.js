@@ -3,11 +3,7 @@ import {Link} from 'react-router-dom';
 import '../App.css';
 
 function Landing(props) {
-    // console.log('this is landing props', props)
-    // const id = props.match.params.id;
-    // const instruments = props.instruments;
-    // console.log(props.instruments)
-    // const instUse = instruments.find((p) => p._id === id);
+
   
     
     const [instrument, setInstrument] = useState([]);
