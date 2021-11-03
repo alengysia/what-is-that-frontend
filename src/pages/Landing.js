@@ -36,9 +36,10 @@ function Landing(props) {
     
     
     
-    const removeInstrument = () => {
-    props.deleteInstrument(props._id);
-    props.history.push('/');
+    const removeInstrument = (e,id) => {
+        console.log(id)
+    props.deleteInstrument(id);
+    getInstrument2();
   };
       
 
@@ -62,7 +63,7 @@ function Landing(props) {
                 
                     <h4>{inst.instName}</h4>
             </div>
-            <button id="delete" onClick={removeInstrument}>
+            <button id="delete" onClick={(e) => removeInstrument(e, inst._id)}>
                 DELETE
             </button>
         </div>

@@ -66,9 +66,15 @@ function Main(props) {
   };
 
   const deleteInstrument = async (id) => {
-    if(!props.user) return;
+    console.log(id)
+    if(!user) return;
+    const token = await user.getIdToken();
     await fetch(URL + id, {
       method: "DELETE",
+      headers: {
+        'Authorization' : 'Bearer ' + token
+      },
+      body: id
     });
     getInstrument();
   };
