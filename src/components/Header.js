@@ -24,14 +24,20 @@ function Header(props) {
     }
     a{
       text-decoration: none;
+      color: #05b38d;
     }
     .home-link{
       font-size: 38px;
       font-weight: 600;
+      background: linear-gradient(120deg, rgba(145,255,67,1) 0%, rgba(14,177,152,1) 47%, rgba(164,4,124,1) 89%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: rgba(0,0,0,.2);
+      margin-right: 250px;
     }
     .cain{
       font-size: 22px;
-      color: #42f5e0
+      color: #05b38d
     }
     nav li{
       list-style-type: none;
@@ -44,7 +50,7 @@ function Header(props) {
       
     }
     .logout{
-      color: purple;
+      color: #05b38d;
       :hover{
         cursor: pointer;
       }
