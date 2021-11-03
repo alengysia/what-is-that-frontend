@@ -22,6 +22,7 @@ function App() {
         backgroundSize: 'cover', 
         backgroundRepeat: 'no-repeat',
         backgroundAttachment: 'fixed',
+        overflow:'auto'
         }
       } 
       className="App">
