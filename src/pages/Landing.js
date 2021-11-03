@@ -46,7 +46,7 @@ function Landing(props) {
 
     useEffect(() => {
         getInstrument2()
-    }, [])
+    }, )
 
     const loaded = () => {
         return instrument.map((inst) =>(
