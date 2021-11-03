@@ -100,7 +100,7 @@ function Create(props) {
                     placeholder='Video link URL'
                     onChange={instChange} 
                 />
-                 <input type='submit' value='Add Instrument' />      
+                 <input className='create-submit' type='submit' value='Add Instrument' />      
             </form>
         </section> 
     );

@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@400;600&family=Merriweather+Sans&display=swap');
 body{
   margin: 0;
   padding: 0;
@@ -37,6 +38,7 @@ body{
  flex-direction: column;
  margin-top: 30px;
  margin-left: 30px;
+ font-family: 'Merriweather Sans', sans-serif;
 }
 
 .instrument h4{
@@ -50,6 +52,11 @@ body{
   border-radius: 15px;
   box-shadow: 4px 4px 6px #a1a3a5;
 }
+
+.show {
+  font-family: 'Merriweather Sans', sans-serif;
+}
+
 .show-title{
   width: 100%;
   display: flex;
@@ -109,7 +116,7 @@ body{
   margin-left: 35%;
   margin-top: 30px;
   border-radius: 15px;
-
+  font-family: 'Merriweather Sans', sans-serif;
 }
 
 form{
@@ -169,6 +176,10 @@ textarea{
 
 .add-btn a{
   text-decoration: none;
+}
+
+.create-submit{
+  background-color: #05b38d;
 }
 
 #delete{
