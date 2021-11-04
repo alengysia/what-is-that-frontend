@@ -35,7 +35,7 @@ https://quizzical-jepsen-f43607.netlify.app/
 
 ### Future enhancements
 
-<p>A filtering function that will let you be able to specific entries based on area of origin, instrument type, and traditional vs non-traditional</p>
+<p>A filtering function that will let you be able to see specific entries based on area of origin, instrument type, and traditional vs non-traditional</p>
 <p>Pagination to break up the entries into more managable chunks, so the user doesn't have to do so much scrolling </p>
 <p>direct links to purchase instruments if they are available</p>
 <p>Links to websites with more detailed information for each instrument</p>

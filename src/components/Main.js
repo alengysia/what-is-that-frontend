@@ -83,7 +83,7 @@ function Main(props) {
 
   
   
-  // useEffect(() => fetchData.current = createIn)
+ 
 
   useEffect(() => {
     const bounty = auth.onAuthStateChanged(user => setUser(user));
