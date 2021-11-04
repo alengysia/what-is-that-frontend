@@ -141,6 +141,10 @@ form{
   padding-top: 5px;
 }
 
+.tradition{
+  height: 60px;
+}
+
 input{
   width: 350px;
   height: 40px;
