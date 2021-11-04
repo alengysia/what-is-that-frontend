@@ -1,70 +1,44 @@
-# Getting Started with Create React App
+# What IS that sound?
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<p>What IS that sound is a website made for and devoted to exploring all the instruments that you may have heard but did not recognize. These instruments might be traditional to other countries, or even non traditional art installations. There are no rules as to what can or can't be added here, as long as it's an instrument that answers the main question: What IS that sound?</p>
 
-## Available Scripts
+## This project was built with the following technologies
+- HTML5
+- CSS3
+- Google fonts
+- Javascript
+- Styled-components
+- Firebase
+- React
+- React-player
+- React-router-dom
+ 
+<p>and relies on backend technologies that were built with</p>
 
-In the project directory, you can run:
+- Node js
+- express
+- MongoDB
+- Mongoose
+- Cors
 
-### `npm start`
+### Screenshots
+![screenshot main](./src/assets/screen1.png)
+![screenshot landing](./src/assets/screen2.png)
+![screenshot create](./src/assets/screen3.png)
+![screenshot wireframe](./src/assets/screen4.png)
+![screenshot erd](./src/assets/screen5.png)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### See the Main website here!
 
-### `npm test`
+https://quizzical-jepsen-f43607.netlify.app/
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Future enhancements
 
-### `npm run build`
+<p>A filtering function that will let you be able to specific entries based on area of origin, instrument type, and traditional vs non-traditional</p>
+<p>Pagination to break up the entries into more managable chunks, so the user doesn't have to do so much scrolling </p>
+<p>direct links to purchase instruments if they are available</p>
+<p>Links to websites with more detailed information for each instrument</p>
+<p>Give instruments tags to be able to refine filter parameters</p>
+<p>An interactive clickable globe the be used as a search filter</p>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
